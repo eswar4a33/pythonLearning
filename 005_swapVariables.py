@@ -8,11 +8,11 @@ def swapPython(a,b):
     return a,b
 def swapWithFunction(a,b):
     return b,a
-def swapXOR(a,b):
-    a ^= b
-    b ^= a
-    a ^= b
-    return a,b
+def swapXOR(a,b): # a = 5(101) , b = 7(111)
+    a ^= b # a = a ^ b (101 ^ 111)  010(2)
+    b ^= a # b = b ^ a (111 ^ 010)  101(5)
+    a ^= b # a = a ^ b (010 ^ 101)  111(7)
+    return a,b # a = 7(111), b = 5(101)
 def swapAddition(a,b):
     a = (a + b)
     b = a - b
