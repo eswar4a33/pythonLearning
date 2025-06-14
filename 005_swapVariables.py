@@ -1,29 +1,49 @@
+def swapWithTemp(a,b):
+    temp = a
+    a = b
+    b = temp
+    return a,b
+def swapPython(a,b):
+    a,b = b,a
+    return a,b
+def swapWithFunction(a,b):
+    return b,a
+def swapXOR(a,b):
+    a ^= b
+    b ^= a
+    a ^= b
+    return a,b
+def swapAddition(a,b):
+    a = (a + b)
+    b = a - b
+    a = a - b
+    return a,b
 
-"""
-import math
-a = 10
-b = 10
-print(math.sqrt(pow(a,2)+pow(a,2)))
+def swapSubtraction(a,b):
+    b = b - a
+    a = a + b
+    b = a - b
+    return a,b
 
+def swapMultiplication(a,b):
+    a = a * b
+    b = a // b
+    a = a // b
+    return a,b
 
-"""
+def swapDivision(a,b):
+    a = b / a
+    b = b / a
+    a = a * b
+    return int(a),int(b)
 
-def add(a,b,c):
-    print(a,b,c)
-    r = a+b+c
-    a = 5
-    b = 6
-    c = 7
-    print(a,b,c)
-    return a,b,c
-
-a = 10
-b = 20
-c = 30
-print(a,b,c)
-e,f,g = add(a,b,c)
-a,b,c = add(a,b,c)
-
-print(e,f,g)
-print(a,b,c)
-
+a = 5
+b = 7
+print(swapWithTemp(a,b))
+print(swapPython(a,b))
+print(swapWithFunction(a,b))
+print(swapXOR(a,b))
+print(swapAddition(a,b))
+print(swapSubtraction(a,b))
+print(swapMultiplication(a,b))
+print(swapDivision(a,b))
