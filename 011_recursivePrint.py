@@ -1,13 +1,12 @@
-
-
-inp = int(input("enter a no.: "))
-num = 0
-def wln(num,imp):
-    print(num, end = "")
-    if num < imp:
+def wln(first,last):
+    print(first, end = "")
+    if first < last:
         print(",",end = "")
-        num += 1
-        wln(num,imp)
+        first += 1
+        wln(first,last)
 
-wln(num,inp)
+start = int(input('enter the starting no.: '))
+end = int(input('enter the last no.: '))
+          
 
+wln(start,end)
