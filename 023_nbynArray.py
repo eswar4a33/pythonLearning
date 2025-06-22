@@ -9,21 +9,31 @@ for i in range(1,n*n+1):
         print()
         ls.append(ls1)
         ls1 = []
+        
+print()
+print(ls)
+print()
 
 center = start = end = n//2
-l = []
+print(str(start)+str(end), "-", ls[start][end], end = " ")
 while center >= 0:
-    for i in range(start, end+1):
-        for j in range(start, end+1):
-            inx = str(i)+str(j)
-            if inx not in l:
-                l.append(inx)
-                print(i,j,end = " ")
-        
+    i = start
+    for j in range(start+1, end+1):
+        inx = str(i)+str(j)
+        print(inx, "-", ls[i][j], end = " ")
+    for i in range(start+1, end+1):
+        inx = str(i)+str(j)
+        print(inx, "-", ls[i][j], end = " ")
+    for j in range(end-1, start-1,-1):
+        inx = str(i)+str(j)
+        print(inx, "-", ls[i][j], end = " ")
+    for i in range(end-1, start-1,-1):
+        inx = str(i)+ str(j)
+        print(inx, "-", ls[i][j], end = " ")       
     print()
-    start -= 1
-    end += 1
-    center -= 1
+    start -=1
+    end +=1
+    center -=1
 
 
 
