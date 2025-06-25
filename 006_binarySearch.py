@@ -1,29 +1,25 @@
 
-"""
-import math
-a = 10
-b = 10
-print(math.sqrt(pow(a,2)+pow(a,2)))
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
 
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
 
-"""
+    return False
 
-def add(a,b,c):
-    print(a,b,c)
-    r = a+b+c
-    a = 5
-    b = 6
-    c = 7
-    print(a,b,c)
-    return a,b,c
+arr = [1, 3, 5, 7, 9, 11, 13]
+target = 3
 
-a = 10
-b = 20
-c = 30
-print(a,b,c)
-e,f,g = add(a,b,c)
-a,b,c = add(a,b,c)
+result = binary_search(arr, target)
 
-print(e,f,g)
-print(a,b,c)
-
+if result != False:
+    print(f"Element found at index {result}")
+else:
+    print("Element not found")
